@@ -68,7 +68,7 @@ brew install terminal-notifier
 
 Then enable it in `config/settings.json` by setting `"use_terminal_notifier": true` under `notifications`. This makes notifications clickable — clicking opens the aircraft live on ADSB Exchange. Without it, notifications still appear via AppleScript and the URL is printed to the console.
 
-> **Troubleshooting**: If `terminal-notifier` is installed but notifications are not appearing, it may not be authorised in **System Settings → Notifications**. Either grant it permission, or leave `use_terminal_notifier` set to `false` to use the reliable AppleScript fallback instead.
+> **Troubleshooting**: If `terminal-notifier` is installed but notifications are not appearing, it may not be authorized in **System Settings → Notifications**. Either grant it permission, or leave `use_terminal_notifier` set to `false` to use the reliable AppleScript fallback instead.
 
 Then just run it and start plane-spotting from your desk! 🪟✈️
 
