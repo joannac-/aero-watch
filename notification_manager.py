@@ -14,7 +14,7 @@ class NotificationManager:
         message = message.replace('"', '\\"')
         subtitle = subtitle.replace('"', '\\"')
         
-        if url:
+        if url and self.notification_config.get("use_terminal_notifier"):
             try:
                 cmd = [
                     'terminal-notifier',
@@ -34,7 +34,7 @@ class NotificationManager:
                 return
                 
             except (subprocess.CalledProcessError, FileNotFoundError):
-                print("terminal-notifier not found, using AppleScript")
+                print("terminal-notifier failed, falling back to AppleScript")
         
         if subtitle:
             applescript = f'display notification "{message}" with title "{title}" subtitle "{subtitle}"'

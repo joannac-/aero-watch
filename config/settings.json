@@ -12,7 +12,8 @@
     "notifications": {
         "enabled": true,
         "sound": true,
-        "timeout": 30
+        "timeout": 30,
+        "use_terminal_notifier": false
     },
     "adsb_exchange": {
         "base_url": "https://globe.adsbexchange.com"
