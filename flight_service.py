@@ -43,6 +43,14 @@ class FlightService:
                 
                 print(f"API Response Status: {response.status_code}")
                 
+                if response.status_code != 200:
+                    try:
+                        error_body = response.json()
+                        print(f"API Error body: {error_body}")
+                    except Exception:
+                        if response.text:
+                            print(f"API Error body: {response.text}")
+                
                 if response.status_code == 200:
                     flights = response.json()
                     print(f"Found {len(flights)} flights for {icao24}")
