@@ -13,6 +13,12 @@ class FlightService:
         try:
             url = f"{self.opensky_config['base_url']}/states/all"
             response = requests.get(url, params=location_params, timeout=10)
+            if response.status_code != 200:
+                print(f"Error fetching planes: HTTP {response.status_code}")
+                return []
+            if not response.text:
+                print("Error fetching planes: empty response")
+                return []
             data = response.json()
             return data.get("states") or []
         except Exception as e:
